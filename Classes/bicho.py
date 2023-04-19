@@ -2,7 +2,7 @@ class Bicho:
     def __init__(self, velocitat, hp, damage, shield, pos):
         self.vel = velocitat # Assignam a l'atribut vel, el valor de velocitat que ens han passat.
         self.hp = hp
-        self.damage = damage
+        self.damage = damager
         self.shield = shield
         self.pos = pos
 

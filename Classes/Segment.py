@@ -1,4 +1,4 @@
-from Recta import*
+from Recta import*o0
 
 
 class Segmento(Recta):

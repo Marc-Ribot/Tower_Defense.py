@@ -1,5 +1,5 @@
 class Bicho:
-    def __init__(self, velocitat, hp, damage, shield, pos):
+    def __init__(self, velocitat, hp, damage, shield, pos, recompensa):
         self.vel = velocitat # Assignam a l'atribut vel, el valor de velocitat que ens han passat.
         self.hp = hp
         self.damage = damage
@@ -15,7 +15,11 @@ class Bicho:
 
     def get_shield(self):
         return self.shield
+    def get_pos(self):
+        return self.pos
 
+    def get_damage(self):
+        return self.damage
     # completar per la resta d'atributs
 
     ######## SETTERS #########
@@ -50,6 +54,11 @@ class Bicho:
             self.set_shield(self.get_shield() - attack_val)
         else:
             self.set_hp(self.get_hp() - attack_val)
+
+    def atacar(self, base):
+        if self.get_pos() == base.get_pos():
+            base.attacked(self.get_damage())
+
 
 
 

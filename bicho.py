@@ -59,6 +59,8 @@ class Bicho:
         if self.get_pos() == base.get_pos():
             base.attacked(self.get_damage())
 
+    def move(self):
+
 
 
 

@@ -2,6 +2,8 @@ from PyQt5.QtWidgets import QGraphicsScene, QGraphicsView, QApplication,QGraphic
 from PyQt5.QtGui import QPixmap
 from PyQt5 import QtCore
 
+
+
 import sys
 
 # Crea una instancia de QGraphicsScene
@@ -26,6 +28,8 @@ scene.addItem(pixmap_item)
 view.fitInView(scene.sceneRect(), QtCore.Qt.KeepAspectRatio)
 view.show()
 sys.exit(app.exec_())
+
+
 
 
 

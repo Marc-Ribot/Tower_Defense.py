@@ -1,1 +1,0 @@
-posicio disponible torres

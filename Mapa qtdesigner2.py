@@ -1,7 +1,7 @@
 from PIL import Image
 
 # Carga la imagen del mapa
-image_path = r"C:\Users\mribo\OneDrive\Documents\6è quadri\Tower_Defense.py\Imatges\1.jpg"
+image_path = r"./imatges/1.jpg"
 
 image = Image.open(image_path)
 

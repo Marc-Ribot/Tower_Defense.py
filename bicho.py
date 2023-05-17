@@ -1,3 +1,4 @@
+import time
 class Bicho:
     def __init__(self, velocitat, hp, damage, shield, pos, recompensa):
         self.vel = velocitat # Assignam a l'atribut vel, el valor de velocitat que ens han passat.
@@ -60,7 +61,15 @@ class Bicho:
             base.attacked(self.get_damage())
 
     def move(self):
-        #move
+
+     #Aquí el bicho es mourà segons la seva velocitat.
+
+
+    def trobarcasella(self):
+
+    #detectar quina es la següent casella o caselles disponibles
+
+
 
 
 

@@ -60,6 +60,7 @@ class Bicho:
             base.attacked(self.get_damage())
 
     def move(self):
+        #move
 
 
 

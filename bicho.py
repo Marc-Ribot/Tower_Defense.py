@@ -6,7 +6,7 @@ class Bicho:
         self.damage = damage
         self.shield = shield
         self.pos = pos
-
+        self.recompensa = recompensa
     ######## GETTERS #########
     def get_velocity(self):
         return self.vel
@@ -61,7 +61,33 @@ class Bicho:
             base.attacked(self.get_damage())
 
     def move(self):
+        def move(self):
+            # Obtener las coordenadas x e y actuales del bicho
+            x, y = self.pos
 
+            # Calcular el desplazamiento en función de la velocidad y el tiempo transcurrido
+            desplazamiento = self.velocidat * tiempo_transcurrido
+
+            # Verificar si el desplazamiento excede el tamaño de una casilla
+            if desplazamiento >= 1:
+                # Obtener la casilla siguiente en el camino
+                siguiente_casilla = self.trobarcasella()
+
+                # Verificar si se encontró una casilla siguiente disponible
+                if siguiente_casilla is not None:
+                    # Actualizar la posición del bicho a la siguiente casilla
+                    self.pos = siguiente_casilla
+
+            # Restar la parte entera del desplazamiento para determinar la fracción de movimiento
+            fraccion_movimiento = desplazamiento % 1
+
+            # Actualizar las coordenadas x e y según la fracción de movimiento
+            if fraccion_movimiento > 0:
+                # Mover el bicho hacia la derecha
+                x += fraccion_movimiento
+
+            # Actualizar la posición del bicho
+            self.pos = (x, y)
 #Aquí el bicho es mourà segons la seva velocitat.
 
 

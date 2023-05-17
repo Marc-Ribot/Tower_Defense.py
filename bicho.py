@@ -62,10 +62,29 @@ class Bicho:
 
     def move(self):
 
-     #Aquí el bicho es mourà segons la seva velocitat.
+#Aquí el bicho es mourà segons la seva velocitat.
 
 
     def trobarcasella(self):
+        fila_actual, columna_actual = self.pos
+        filas = len(self.map_matrix)
+        columnas = len(self.map_matrix[0])
+
+        # Buscar la siguiente casilla disponible avanzando hacia la derecha
+        for columna in range(columna_actual + 1, columnas):
+            if self.map_matrix[fila_actual][columna] == 1:
+                return fila_actual, columna
+
+        # Si no se encuentra ninguna casilla disponible hacia la derecha, intentar moverse hacia arriba o abajo
+        for fila in range(fila_actual - 1, -1, -1):
+            for columna in range(columnas):
+                if self.map_matrix[fila][columna] == 1:
+                    return fila, columna
+
+        for fila in range(fila_actual + 1, filas):
+            for columna in range(columnas):
+                if self.map_matrix[fila][columna] == 1:
+                    return fila, columna
 
     #detectar quina es la següent casella o caselles disponibles
 

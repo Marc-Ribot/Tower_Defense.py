@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="Mapa">
+    <file>1.jpg</file>
+  </qresource>
+  <qresource prefix="Principal">
+    <file>Títol.jpg</file>
+    <file>Fons 1.jpg</file>
+  </qresource>
+  <qresource prefix="Torretas">
+    <file>Torre cost 1.jpg</file>
+    <file>Torre cost 2.jpg</file>
+    <file>Torre cost 5.jpg</file>
+  </qresource>
+</RCC>

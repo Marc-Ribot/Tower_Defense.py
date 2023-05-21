@@ -54,6 +54,27 @@ for row in map_matrix:
         print(value, end=' ')
     print()
 
+class Mapa:
+    def __init__(self, matriz):
+        self.matriz = matriz
+        self.casillas_disponibles = set()  # Conjunto de casillas disponibles para insertar torres
+
+    def agregar_casilla_disponible(self, casilla):
+        self.casillas_disponibles.add(casilla)
+
+    # Resto de métodos y atributos de la clase Mapa
+
+
+# Crear instancia de la clase Mapa
+mapa = Mapa(map_matrix)
+
+# Definir las casillas disponibles y agregarlas al mapa
+casillas_disponibles = [(10, 5), (12, 8), (15, 10), (18, 13), (20, 15)]
+
+for casilla in casillas_disponibles:
+    mapa.agregar_casilla_disponible(casilla)
+
+
 from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidget, QTableWidgetItem
 import sys
 
@@ -78,8 +99,4 @@ class MapWindow(QMainWindow):
 app = QApplication(sys.argv)
 window = MapWindow(map_matrix)
 sys.exit(app.exec_())
-
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout
-from PyQt5 import uic
-import sys
 

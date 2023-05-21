@@ -60,7 +60,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="Imatges/Imatges.qrc"/>
+  <include location="Imatges.qrc"/>
  </resources>
  <connections/>
 </ui>

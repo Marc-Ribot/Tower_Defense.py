@@ -55,7 +55,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Oleada: 0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QLabel" name="Diners">
+   <widget class="QLabel" name="Mapa">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -81,7 +81,7 @@
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="Imatges/Imatges.qrc">
+     <iconset resource="Imatges.qrc">
       <normaloff>:/Torretas/Torre cost 1.jpg</normaloff>:/Torretas/Torre cost 1.jpg</iconset>
     </property>
     <property name="iconSize">
@@ -104,7 +104,7 @@
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="Imatges/Imatges.qrc">
+     <iconset resource="Imatges.qrc">
       <normaloff>:/Torretas/Torre cost 2.jpg</normaloff>:/Torretas/Torre cost 2.jpg</iconset>
     </property>
     <property name="iconSize">
@@ -127,7 +127,7 @@
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="Imatges/Imatges.qrc">
+     <iconset resource="Imatges.qrc">
       <normaloff>:/Torretas/Torre cost 5.jpg</normaloff>:/Torretas/Torre cost 5.jpg</iconset>
     </property>
     <property name="iconSize">
@@ -150,13 +150,27 @@
      <number>24</number>
     </property>
    </widget>
-   <zorder>Diners</zorder>
+   <widget class="QLabel" name="timeLabel">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>50</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Tiempo: 0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <zorder>Mapa</zorder>
    <zorder>Dinero</zorder>
    <zorder>Oleada</zorder>
    <zorder>Torre_1</zorder>
    <zorder>Torre_2</zorder>
    <zorder>Torre_5</zorder>
    <zorder>progressBarLife</zorder>
+   <zorder>timeLabel</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -171,7 +185,7 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="Imatges/Imatges.qrc"/>
+  <include location="Imatges.qrc"/>
  </resources>
  <connections/>
 </ui>

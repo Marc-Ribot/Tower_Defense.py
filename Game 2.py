@@ -2,15 +2,9 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel
 from PyQt5.uic import loadUi
 from PyQt5.QtCore import QTimer
 from Monedero import Monedero
-from Bicho import Bicho
-from torre import Torre
 import Imatges_rc
 
-# Bichos
-Enemigo1 = Bicho(1, 50, 3, 0, (0, 12), 5)
 
-# Torretas
-Torre1 = Torre(10, 5, (4, 4), 5, 6, 2)
 class Game:
     def __init__(self):
         self.app = QApplication([])
@@ -38,9 +32,6 @@ class Game:
         # Obtener el QLabel del tiempo
         self.time_label = self.map_ui.findChild(QLabel, "timeLabel")
         self.money_label = self.map_ui.findChild(QLabel, "Dinero")
-        self.torre_label = self.map_ui.findChild(QLabel, "torre_5")
-
-        Torre1.label = self.torre_label
 
         # Mostrar la ventana del mapa
         self.map_window.show()

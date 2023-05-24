@@ -1,7 +1,7 @@
 from PIL import Image
 
 # Carga la imagen del mapa
-image_path = r"./imatges/1.jpg"
+image_path = "1.jpg"
 
 image = Image.open(image_path)
 
@@ -96,7 +96,5 @@ class MapWindow(QMainWindow):
         self.show()
 
 
-app = QApplication(sys.argv)
-window = MapWindow(map_matrix)
-sys.exit(app.exec_())
+
 

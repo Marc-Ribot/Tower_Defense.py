@@ -22,6 +22,4 @@ class Base:
 
     ##### MÈTODES ADICIONALS #####
     def attacked(self, attack_val):
-
-        else:
-            self.set_hp(self.get_hp() - attack_val)
+        self.set_hp(self.get_hp() - attack_val)

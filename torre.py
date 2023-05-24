@@ -1,4 +1,5 @@
 import math
+from Monedero import Monedero
 
 
 class Torre:
@@ -43,7 +44,13 @@ class Torre:
             # Verificar si la torre está lista para atacar de nuevo  necessitam definir tot lo referent
             #a temps
             tiempo_actual = time.time()
-            if tiempo_actual - self.ultimo_ataque >= 1 / self.vel_ataque:
+            if tiempo_actual - self.ultimo_ataque >= 1 / self.rof:
                 # Realizar el ataque
                 bicho.attacked(self.get_damage())
                 self.ultimo_ataque = tiempo_actual
+
+    def comprar(self):
+        Monedero.decrease_money(self.preu)
+
+    def vender(self):
+        Monedero.increase_money(self.venta)

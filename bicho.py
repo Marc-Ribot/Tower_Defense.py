@@ -1,4 +1,4 @@
-import time
+from Mapa_qtdesigner2 import map_matrix
 class Bicho:
     def __init__(self, velocitat, hp, damage, shield, pos, recompensa):
         self.vel = velocitat # Assignam a l'atribut vel, el valor de velocitat que ens han passat.
@@ -7,6 +7,8 @@ class Bicho:
         self.shield = shield
         self.pos = pos
         self.recompensa = recompensa
+        self.map_matrix = map_matrix
+
     ######## GETTERS #########
     def get_velocity(self):
         return self.vel
@@ -21,6 +23,9 @@ class Bicho:
 
     def get_damage(self):
         return self.damage
+
+    def get_recompensa(self):
+        return self.recompensa
     # completar per la resta d'atributs
 
     ######## SETTERS #########
@@ -60,34 +65,38 @@ class Bicho:
         if self.get_pos() == base.get_pos():
             base.attacked(self.get_damage())
 
-    def move(self):
-        def move(self):
-            # Obtener las coordenadas x e y actuales del bicho
-            x, y = self.pos
+    def morir(self, bicho,money_manager):
+        if self.get_hp() <= 0:
+            bicho.remove_bicho(self)
+            money_manager.increase_money(self.get_recompensa())
 
-            # Calcular el desplazamiento en función de la velocidad y el tiempo transcurrido
-            desplazamiento = self.velocidat * tiempo_transcurrido
+    def move(self, elapsed_time):
+        # Obtener las coordenadas x e y actuales del bicho
+        x, y = self.pos
 
-            # Verificar si el desplazamiento excede el tamaño de una casilla
-            if desplazamiento >= 1:
-                # Obtener la casilla siguiente en el camino
-                siguiente_casilla = self.trobarcasella()
+        # Calcular el desplazamiento en función de la velocidad y el tiempo transcurrido
+        desplazamiento = self.get_velocity()* elapsed_time()
 
-                # Verificar si se encontró una casilla siguiente disponible
-                if siguiente_casilla is not None:
-                    # Actualizar la posición del bicho a la siguiente casilla
-                    self.pos = siguiente_casilla
+        # Verificar si el desplazamiento excede el tamaño de una casilla
+        if desplazamiento >= 1:
+            # Obtener la casilla siguiente en el camino
+            siguiente_casilla = self.trobarcasella()
 
-            # Restar la parte entera del desplazamiento para determinar la fracción de movimiento
-            fraccion_movimiento = desplazamiento % 1
+        # Verificar si se encontró una casilla siguiente disponible
+        if siguiente_casilla is not None:
+            # Actualizar la posición del bicho a la siguiente casilla
+            self.pos = siguiente_casilla
 
-            # Actualizar las coordenadas x e y según la fracción de movimiento
-            if fraccion_movimiento > 0:
-                # Mover el bicho hacia la derecha
-                x += fraccion_movimiento
+        # Restar la parte entera del desplazamiento para determinar la fracción de movimiento
+        fraccion_movimiento = desplazamiento % 1
 
-            # Actualizar la posición del bicho
-            self.pos = (x, y)
+        # Actualizar las coordenadas x e y según la fracción de movimiento
+        if fraccion_movimiento > 0:
+            # Mover el bicho hacia la derecha
+            x += fraccion_movimiento
+
+        # Actualizar la posición del bicho
+        self.pos = (x, y)
 #Aquí el bicho es mourà segons la seva velocitat.
 
 
